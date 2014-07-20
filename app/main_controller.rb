@@ -10,7 +10,7 @@ class MainController < UIViewController
   end
 
   def hello_pressed(sender)
-    puts "Hello Pressed"
+    navigationController.pushViewController(HelloController.new, animated: true)
   end
 
   private
