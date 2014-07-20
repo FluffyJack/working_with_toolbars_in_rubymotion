@@ -8,7 +8,9 @@ class MainController < UIViewController
 
     navigationController.toolbarHidden = false
     setToolbarItems([
-      UIBarButtonItem.alloc.initWithTitle("Hello", style: UIBarButtonItemStylePlain, target: self, action: 'hello_pressed:')
+      UIBarButtonItem.alloc.initWithTitle("Hello", style: UIBarButtonItemStylePlain, target: self, action: 'hello_pressed:'),
+      UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemFlexibleSpace, target: nil, action: nil),
+      UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemAction, target: self, action: 'hello_pressed:')
     ])
   end
 
