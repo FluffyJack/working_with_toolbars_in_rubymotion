@@ -6,7 +6,27 @@ class MainController < UIViewController
 
     add_hello_button
 
-    # setup toolbar here
+    # navigationController.toolbarHidden = false
+    view.addSubview(@toolbar = UIToolbar.new)
+    @toolbar.frame = CGRectMake(0, 150, 320, 50)
+    @toolbar.setItems([
+      UIBarButtonItem.alloc.initWithTitle(
+        "Hello",
+        style: UIBarButtonItemStylePlain,
+        target: self,
+        action: 'hello_pressed:'
+      ),
+      UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+        UIBarButtonSystemItemFlexibleSpace,
+        target: nil,
+        action: nil
+      ),
+      UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+        UIBarButtonSystemItemAction,
+        target: self,
+        action: 'hello_pressed:'
+      )
+    ])
   end
 
   def hello_pressed(sender)
