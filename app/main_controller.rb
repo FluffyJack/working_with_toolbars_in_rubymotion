@@ -2,7 +2,7 @@ class MainController < UIViewController
   def viewDidLoad
     super
 
-    view.setBackgroundColor UIColor.whiteColor
+    view.backgroundColor = UIColor.whiteColor
 
     add_hello_button
 
@@ -13,10 +13,10 @@ class MainController < UIViewController
       UIBarButtonItem.alloc.initWithTitle("Hello", style: UIBarButtonItemStylePlain, target: self, action: 'hello_pressed:'),
       UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemFlexibleSpace, target: nil, action: nil),
       UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemAction, target: self, action: 'hello_pressed:')
-    ])
+    ], animated: true)
   end
 
-  def hello_pressed(sender)
+  def hello_pressed(_)
     navigationController.pushViewController(HelloController.new, animated: true)
   end
 

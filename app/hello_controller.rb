@@ -2,7 +2,7 @@ class HelloController < UIViewController
   def viewDidLoad
     super
 
-    view.setBackgroundColor UIColor.whiteColor
+    view.backgroundColor = UIColor.whiteColor
 
     view.addSubview(@label = UILabel.new)
     @label.text = "Hello World!"
